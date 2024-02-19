@@ -1,21 +1,21 @@
 import React, {useContext, useState} from 'react';
 import {Link} from "react-router-dom";
 import Logout from "../auth/Logout.jsx";
-import {AuthContext} from "../auth/AuthProvider.jsx";
+//import {AuthContext} from "../auth/AuthProvider.jsx";
 
 
 const NavBar = () => {
 
     const [showAccount, setShowAccount] = useState(false)
 
-    const{user} = useContext(AuthContext)
+    //const{user} = useContext(AuthContext)
 
     const handleAccountClick = () => {
       setShowAccount(!showAccount)
     }
 
-    const isLoggedIn = user !== null
-    //const isLoggedIn = localStorage.getItem("token")
+    //const isLoggedIn = user !== null
+    const isLoggedIn = localStorage.getItem("token")
     const userRole = localStorage.getItem("userRole")
 
 
