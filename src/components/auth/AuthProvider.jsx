@@ -15,11 +15,11 @@ const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null)
 
     const handleLogin = (token) => {
-      const decodedToken = jwtDecode(token)
-        localStorage.setItem("userId", decodedToken.sub)
-        localStorage.setItem("userRole",decodedToken.roles)
+      const decodedUser = jwtDecode(token)
+        localStorage.setItem("userId", decodedUser.sub)
+        localStorage.setItem("userRole",decodedUser.roles)
         localStorage.setItem("token", token)
-        setUser(decodedToken)
+        setUser(decodedUser)
     }
 
     const handleLogout = () => {

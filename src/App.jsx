@@ -26,7 +26,7 @@ function App() {
 
 
     return (
-        <>
+
             <AuthProvider>
                 <main>
                     <Router>
@@ -58,7 +58,7 @@ function App() {
                     <Footer/>
                 </main>
             </AuthProvider>
-        </>
+
     )
 }
 

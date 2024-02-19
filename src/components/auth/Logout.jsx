@@ -13,8 +13,8 @@ const Logout = () => {
         navigate("/", {state: {message : "You have been logged out!"}})
     }
 
-    const isLoggedIn = auth.user !== null
-    return isLoggedIn ? (
+    //const isLoggedIn = auth.user !== null
+    return (
         <>
             <li>
                 <Link className='dropdown-item' to={"/profile"}>
@@ -28,7 +28,7 @@ const Logout = () => {
                 Logout
             </button>
         </>
-    ) : null
+    )
 }
 
 export default Logout;

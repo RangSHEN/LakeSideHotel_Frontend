@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Link} from "react-router-dom";
 import Logout from "../auth/Logout.jsx";
-//import {AuthContext} from "../auth/AuthProvider.jsx";
+import {AuthContext} from "../auth/AuthProvider.jsx";
 
 
 const NavBar = () => {
@@ -69,34 +69,35 @@ const NavBar = () => {
                                 className={`nav-link dropdown-toggle ${showAccount ? "show" : ""}`}
                                 href="#"
                                 role="button"
-                                data-bs-toggle={"dropdown"}
+                                data-bs-toggle="dropdown"
                                 aria-expanded="false"
-                                onClick={handleAccountClick}
-                            >
+                                onClick={handleAccountClick}>
                                 {" "}
                                 Account
                             </a>
                             <ul
                                 className={`dropdown-menu ${showAccount ? "show" : ""}`}
-                                aria-labelledby="navbarDropdown"
-                            >
+                                aria-labelledby="navbarDropdown">
                                 {isLoggedIn ? (
                                     <Logout/>
-                                ): (
+                                ) : (
                                     <li>
-                                        <Link to={"/login"} className="dropdown-item">Login</Link>
+                                        <Link className="dropdown-item" to={"/login"}>
+                                            Login
+                                        </Link>
                                     </li>
                                 )}
-                                {/*<li>*/}
-                                {/*    <Link to={"/profile"} className="dropdown-item">Profile</Link>*/}
-                                {/*</li>*/}
                             </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    );
+                            {/*<li>*/}
+                            {/*    <Link to={"/profile"} className="dropdown-item">Profile</Link>*/}
+                            {/*</li>*/}
+                </li>
+            </ul>
+        </div>
+</div>
+</nav>
+)
+    ;
 };
 
 export default NavBar;
